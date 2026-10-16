@@ -1,0 +1,11 @@
+import { chromium } from 'playwright-core'
+const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome', args: ['--no-sandbox'] })
+const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage()
+await page.goto('http://localhost:4174/')
+await page.getByTestId('load-demo').click()
+const q = () => page.evaluate(() => { const c = document.querySelector('[data-testid="crate-list"]'); const li = c.querySelector('li'); const r = li.getBoundingClientRect(); const cr = c.getBoundingClientRect(); return { scrollLeft: c.scrollLeft, scrollWidth: c.scrollWidth, clientWidth: c.clientWidth, liLeft: r.left, liRight: r.right, cLeft: cr.left, cRight: cr.right } })
+console.log('before', JSON.stringify(await q()))
+await page.locator('button[aria-label$="to the show"]:not([disabled])').first().click()
+await page.waitForTimeout(300)
+console.log('after click', JSON.stringify(await q()))
+await browser.close()
