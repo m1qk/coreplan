@@ -1,8 +1,6 @@
-# 90.3 The Core: Show Planner (Aero 95 edition)
+# 90.3 The Core: Show Planner
 
-Same app and same features as the original, restyled as Windows 95 windows with light Frutiger Aero touches (glass title bars, glossy buttons, sky desktop). Only the look changed: the scheduling code, importers, tests and setup steps below are identical. Deploy it as its own site so the original stays online.
-
-A planner for one-hour college radio shows at 90.3 The Core (WVPH, Rutgers). Import songs, drag them into an hour, and watch exact start and end times update as you go. Station elements (PHS Partnership, Image ID, promos and so on) are placed on the station clock automatically, and the app tells you plainly what still needs fixing.
+A planner for one hour college radio shows at 90.3 The Core FM 90.3 RLC-WVPH PISCATAWAY (WVPH, Rutgers). Import songs, drag them into an hour, and watch exact start and end times update as you go. Station elements (PHS Partnership, Image ID, promos and so on) are placed on the station clock automatically, and the app tells you plainly what still needs fixing.
 
 It is a static website. There is no server and no account. Everything is saved in your own browser.
 
