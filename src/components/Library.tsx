@@ -4,7 +4,6 @@ import { useApp } from '../app-context'
 import { CdDisc } from './Art'
 import { LIB_PREFIX } from './dnd'
 import { ConfirmButton, Cover, Icon, Segmented } from './ui'
-import { demoLibrary } from '../lib/demo'
 import { fmtDuration } from '../lib/time'
 import type { Track } from '../lib/types'
 
@@ -122,20 +121,11 @@ export function Library({ className = '' }: { className?: string }) {
           <div className="flex flex-col items-center gap-3 px-2 py-6 text-center">
             <CdDisc className="h-32 w-32" />
             <p className="h-sub text-lg">The crate is empty.</p>
-            <p className="hint max-w-[18rem]">Import a playlist or a CSV, paste a tracklist, or try a few made-up songs to see how it works.</p>
-            <button
-              type="button"
-              className="btn btn-hot"
-              data-testid="load-demo"
-              onClick={() => {
-                const d = demoLibrary()
-                dispatch({ type: 'library/set', library: [...state.library, ...d.tracks], playlists: [...state.playlists, ...d.playlists] })
-                toast('Added 19 made-up songs to play with.')
-              }}
-            >
+            <p className="hint max-w-[18rem]">Import a playlist or a CSV, paste a tracklist, or add a song by hand.</p>
+            <span className="btn btn-hot pointer-events-none">
               <Icon name="spark" className="h-5 w-5" />
-              Try demo songs
-            </button>
+              Nothing here yet
+            </span>
           </div>
         ) : list.length === 0 ? (
           <p className="px-2 py-8 text-center font-bold">No songs match. Clear the search or filter.</p>

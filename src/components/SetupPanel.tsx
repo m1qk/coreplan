@@ -21,10 +21,10 @@ export function SetupPanel({ className = '' }: { className?: string }) {
       </div>
       <div className="grid gap-3">
         <Field label="Show name" htmlFor="f-show">
-          <input id="f-show" className="field" value={s.showName} maxLength={120} placeholder="Tuesday Night Static" onChange={(e) => set({ showName: e.target.value })} autoComplete="off" />
+          <input id="f-show" className="field" value={s.showName} maxLength={120} placeholder="Required: enter your show name" onChange={(e) => set({ showName: e.target.value })} autoComplete="off" />
         </Field>
         <Field label="DJ name" htmlFor="f-dj">
-          <input id="f-dj" className="field" value={s.djName} maxLength={120} placeholder="DJ Mango Pit" onChange={(e) => set({ djName: e.target.value })} autoComplete="off" />
+          <input id="f-dj" className="field" value={s.djName} maxLength={120} placeholder="Required: enter your DJ name" onChange={(e) => set({ djName: e.target.value })} autoComplete="off" />
         </Field>
         <Field label="Date" htmlFor="f-date">
           <input id="f-date" type="date" className="field" value={s.date} onChange={(e) => e.target.value && set({ date: e.target.value })} />
